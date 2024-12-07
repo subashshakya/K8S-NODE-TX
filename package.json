@@ -1,0 +1,31 @@
+{
+  "name": "k8s-node-tx",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/subashshakya/K8S-NODE-TX.git"
+  },
+  "author": "Subash Shakya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/subashshakya/K8S-NODE-TX/issues"
+  },
+  "homepage": "https://github.com/subashshakya/K8S-NODE-TX#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/jasmine": "^5.1.5",
+    "@types/mongoose": "^5.11.96",
+    "@types/node": "^22.10.1",
+    "jasmine": "^5.5.0",
+    "jasmine-node": "^3.0.0",
+    "typescript": "^5.7.2"
+  }
+}
