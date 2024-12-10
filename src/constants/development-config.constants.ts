@@ -1,0 +1,5 @@
+const DEVELOPMENT_CONFIG = {
+  PORT: 8000,
+};
+
+export default DEVELOPMENT_CONFIG;
