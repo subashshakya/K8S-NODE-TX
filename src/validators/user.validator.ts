@@ -11,4 +11,9 @@ const UserSchema = Joi.object({
   transaction: Joi.array().items(TransactionSchema).optional(),
 });
 
-export default UserSchema;
+const UserLoginSchema = Joi.object({
+  username: Joi.string().optional(),
+  password: Joi.string().min(8).max(255).required(),
+});
+
+export { UserSchema, UserLoginSchema };
