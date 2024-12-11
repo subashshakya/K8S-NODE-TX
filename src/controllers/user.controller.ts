@@ -155,11 +155,13 @@ const deleteUser = async (req: Request, res: Response) => {
     });
   }
   try {
+    /* eslint-disable*/
     const deletedUser = await prisma.user.delete({
       where: {
         id: parseInt(id),
       },
     });
+    /* eslint-enable*/
     res.status(200).send({
       success: false,
       message: "User deleted successfully.",

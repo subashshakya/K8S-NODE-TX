@@ -5,7 +5,9 @@
   "scripts": {
     "server": "node ./dist/index.js",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
   },
   "type": "module",
   "repository": {
@@ -17,25 +19,42 @@
   "bugs": {
     "url": "https://github.com/subashshakya/K8S-NODE-TX/issues"
   },
+  "husky": {
+    "hooks": {
+      "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
+      "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
+      "post-applypatch": "echo \"[Husky] post-applypatch\"",
+      "pre-commit": "prettier --write . && git add -A ."
+    }
+  },
+  "lint-staged": {
+    "*": "prettier --write"
+  },
   "homepage": "https://github.com/subashshakya/K8S-NODE-TX#readme",
   "description": "",
   "devDependencies": {
+    "@eslint/js": "^9.16.0",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/jasmine": "^5.1.5",
     "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^22.10.1",
+    "eslint": "^9.16.0",
+    "globals": "^15.13.0",
     "jasmine": "^5.5.0",
     "jasmine-node": "^3.0.0",
+    "prettier": "^3.4.2",
     "prisma": "^6.0.1",
     "tsx": "^4.19.2",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.0"
   },
   "dependencies": {
     "@prisma/client": "^6.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "husky": "^9.1.7",
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2"
   }

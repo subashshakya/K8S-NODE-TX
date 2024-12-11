@@ -14,9 +14,11 @@ const verifyToken = (req: Request, res: Response, next: NextFunction) => {
   if (containsBearerToken) {
     const token = authHeader.split(" ")[1];
     try {
+      /* eslint-disable*/
       const verified = jwt.verify(token, token_header_key);
       next();
     } catch (err) {
+      /* eslint-enable*/
       logger(LoggerStatus.WARN, "Token invalid");
       return res.status(401).send({
         success: false,
